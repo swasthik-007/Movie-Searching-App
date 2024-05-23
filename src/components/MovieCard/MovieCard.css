@@ -8,6 +8,7 @@
     align-items: center;
     background-color: whitesmoke;
     text-align: center;
+    margin-bottom: 3rem;
 }
 
 .movie-title {
@@ -15,7 +16,6 @@
     font-size: x-large;
     letter-spacing: 5px;
 }
-
 .movie-year , .movie-type {
     margin-top: 1rem;
     font-size: larger;
