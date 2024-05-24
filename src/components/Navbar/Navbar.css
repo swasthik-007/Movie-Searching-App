@@ -4,23 +4,6 @@
     border: 1px solid var(--dull-blue);
     padding: 1rem;
     align-items: center;
-
-    
-          
-            
-    
-
-          
-          Expand Down
-          
-            
-    
-
-          
-          Expand Up
-    
-    @@ -58,4 +58,9 @@
-  
     background-color: var(--dull-blue);
     color: white;
 }
