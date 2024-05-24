@@ -1,13 +1,12 @@
 // Components import
 import MovieCard from "../components/MovieCard/MovieCard";
-
 // CSS imports
 import './Home.css';
 import useMovieList from "../hooks/useMovieList";
-
 function Home() {
 
     const {movieList} = useMovieList('harry', 'avengers', 'batman');
+
 
     return (
         <>
