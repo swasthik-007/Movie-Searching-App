@@ -1,8 +1,18 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+
+// CSS import
 import './Navbar.css';
+
+// Context import
+import ThemeContext from '../../context/ThemeContext';
+
+// Component import
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 import useMovieList from '../../hooks/useMovieList';
 import useDebounce from '../../hooks/useDebounce';
-import { Link, useNavigate } from 'react-router-dom';
+
 function Navbar() {
     // const resultListRef = useRef(null);
     const [isAutoCompleteVisible, setIsAutoCompleteVisible] = useState(false);
@@ -10,11 +20,11 @@ function Navbar() {
     const {movieList} = useMovieList(searchTerm);
     const navigator = useNavigate();
 
+    const {theme, setTheme} = useContext(ThemeContext);
+
     function handleAutoCompleteClick(e, movieImdbId) {
-        console.log("onmousedown",e.target);
         navigator(`/movie/${movieImdbId}`);
     }
-
     return (
         <div className="navbar-wrapper">
             <div className="movie-base-title"><Link to="/">Movie Base</Link></div>
@@ -47,8 +57,8 @@ function Navbar() {
                     ))}
                 </div>
             </div>
-            <div>
-                Theme
+            <div onClick={() => setTheme((theme == 'dark') ? 'light' : 'dark')}>
+                <FontAwesomeIcon className='theme-icon' icon={(theme == 'dark') ? faSun : faMoon} />
             </div>
         </div>
     )
