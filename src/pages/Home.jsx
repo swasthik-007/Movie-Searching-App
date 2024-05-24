@@ -13,6 +13,7 @@ function Home() {
             <div className="movie-card-wrapper">
                 {movieList.length > 0 && movieList.map(movie => <MovieCard 
                                             key={movie.imdbID}
+                                            id={movie.imdbID}
                                             {...movie} 
                                         />
                 )}
